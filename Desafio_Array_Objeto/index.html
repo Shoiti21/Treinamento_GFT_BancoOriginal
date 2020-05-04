@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title>Desafio</title>
+        <script>
+            var criarPessoaObj = function(nome, idade){
+                    this.nome= nome;
+                    this.idade= idade;
+            }
+
+            //transformando objeto em array
+            var pessoaObjeto = new criarPessoaObj("Leandro",24);
+            console.log(pessoaObjeto);
+
+            var pessoaArrayProp = Object.getOwnPropertyNames(pessoaObjeto);
+            console.log(pessoaArrayProp);
+
+
+            var pessoaArrayValue = Object.values(pessoaObjeto);
+            console.log(pessoaArrayValue);
+
+            //trnasformando array em objeto
+            var carroArrayProp = ["nome","modelo"];
+            var carroArrayValue = ["Ford","Ka"];
+            var carroObjeto={};
+            
+            carroArrayProp.forEach(function(elemento, index){
+                carroObjeto[elemento]=carroArrayValue[index];
+            });
+            console.log(carroObjeto);
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
