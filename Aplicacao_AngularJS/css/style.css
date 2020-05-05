@@ -1,4 +1,46 @@
-#ImgPrevia{
+.container, .resume{
+    margin-top: 3vh;
+    text-align:center;
+    justify-content: space-around;
+    display: flex;
+}
+.resume-table{
+    width: 30vh;
+}
+.imgprevia{
     border-radius: 8px;
-    width: 400px;
+    width: 80vh;
+}
+.videoprevia{
+    width: 30vh;
+}
+.imgcapa{
+    width: 25vh;
+    height: 30vh;
+}
+.searchfile{
+    margin-top: 5vh;
+    display: flex;
+    justify-content: center;
+}
+.searchfile .file-path-wrapper{
+    width: 40vh;
+}
+.card{
+    margin-top: 5vh;
+    width: 70vh;
+}
+.result.card{
+    width: 40vh;
+}
+.divider{
+    margin-top: 4vh;
+    margin-bottom: 5vh;
+}
+table, td, th{
+    font-size: 14px;
+    border: 1px solid black;
+}
+td.property{
+    width: 8vh;
 }

@@ -4,21 +4,72 @@
         <title>Aplicação</title>
         <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css">
         <link type="text/css" rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <script type="text/javascript" src="lib/js/materialize.min.js"></script>
     </head>
     <body>
-        <form>
-            <div class="file-field input-field">
-                <div class="btn">
-                    <span>Adicionar</span>
-                    <input type="file">
+        <div class="container">
+            <div class="card">
+                <div class="card-image">
+                    <img class="imgprevia" src="exemplo.jpg">
                 </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Faça upload da imagem">
+                <div class="card-content">
+                    <form>
+                        <div class="searchfile file-field input-field">
+                            <div class="btn #e57373 red lighten-2">
+                                <span>Adicionar</span>
+                                <input type="file">
+                            </div>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" placeholder="Faça upload da imagem">
+                            </div>
+                        </div>
+                        <button class="btn waves-effect waves-light #e57373 red lighten-2" type="submit" name="action">
+                            Enviar<i class="material-icons right">system_update_alt</i>
+                        </button>
+                    </form>
+                    <div class="divider"></div>
+                    <div>
+                        <span class="card-title">Resultado:</span>
+                        <div class="resume">
+                            <div class="resume-table">
+                                <table>
+                                    <tr>
+                                        <td class="property">Anime:</td>
+                                        <td>exemplo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gênero:</td>
+                                        <td>exemplo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Estúdio:</td>
+                                        <td>exemplo</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Episódio:</td>
+                                        <td>exemplo</td>
+                                    </tr>
+                                </table>
+                            </div>
+                            <div>
+                                <img class="imgcapa z-depth-2" src="exemplo.jpg">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button>Buscar</button>
-        </form>
-        <img id="ImgPrevia" src="exemplo.jpg">
+            <div class="result card">
+                <div class="card-content">
+                    <span class="card-title">0000 resultados encontrados</span>
+                    <div class="waves-effect waves-red input-field">
+                        <img class="videoprevia" src="exemplo.jpg">
+                    </div>
+                    <div class="waves-effect waves-red input-field">
+                        <img class="videoprevia" src="exemplo.jpg">
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
