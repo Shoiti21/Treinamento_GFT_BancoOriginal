@@ -1,0 +1,14 @@
+angular.module("Rendering",[]);
+angular.module("Rendering").controller("RenderingCtrl",['$scope',function($scope){
+    $scope.imagePreview="default.jpg"
+    $scope.thumbnailResult=[];
+    $scope.setImagePreview=function(image){
+        $scope.imagePreview=image;
+    };
+    $scope.setResumoResult=function(resume){
+        console.log(resume);
+    }
+    $scope.setThumbnailResult=function(thumbnail){
+        $scope.thumbnailResult.push(thumbnail);
+    };
+}]);

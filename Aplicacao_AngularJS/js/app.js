@@ -1,0 +1,1 @@
+angular.module("AppAnime",["Rendering", "SearchPage"]);

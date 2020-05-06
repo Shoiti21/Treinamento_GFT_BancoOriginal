@@ -7,12 +7,14 @@
 .resume-table{
     width: 30vh;
 }
-.imgprevia{
+.imgpreview{
     border-radius: 8px;
     width: 80vh;
+    height: 40vh;
 }
-.videoprevia{
+.thumbpreview{
     width: 30vh;
+    height: 15vh;
 }
 .imgcapa{
     width: 25vh;
@@ -32,6 +34,10 @@
 }
 .result.card{
     width: 40vh;
+    height: auto;
+}
+.search.card{
+    height: auto;
 }
 .divider{
     margin-top: 4vh;
