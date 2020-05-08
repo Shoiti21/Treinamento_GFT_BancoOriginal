@@ -1,14 +1,22 @@
-angular.module("Rendering",[]);
-angular.module("Rendering").controller("RenderingCtrl",['$scope',function($scope){
+angular.module("AppAnime").controller("RenderingCtrl",['$scope',function($scope){
     $scope.imagePreview="default.jpg"
-    $scope.thumbnailResult=[];
+    $scope.videoPreview=null;
+    $scope.thumbnailResult=null;
+    $scope.animeResult=null;
+    $scope.allAnimeResult=[];
+    $scope.setAllAnimeResult=function(animes){
+        $scope.allAnimeResult=animes;
+    }
     $scope.setImagePreview=function(image){
         $scope.imagePreview=image;
     };
     $scope.setResumoResult=function(resume){
-        console.log(resume);
+        $scope.animeResult=resume;
     }
     $scope.setThumbnailResult=function(thumbnail){
-        $scope.thumbnailResult.push(thumbnail);
+        $scope.thumbnailResult=thumbnail;
     };
+    $scope.setVideoPreview=function(video){
+        $scope.videoPreview=video;
+    }
 }]);

@@ -1,5 +1,7 @@
+<!DOCTYPE html>
 <html ng-app="AppAnime">
     <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <head>
         <title>Aplicação</title>
         <link type="text/css" rel="stylesheet" href="lib/css/materialize.min.css">
@@ -13,14 +15,15 @@
         <script type="text/javascript" src="js/controller/RenderingCtrl.js"></script>
         <script type="text/javascript" src="js/service/animeAPI.js"></script>
         <script type="text/javascript" src="js/value/confValue.js"></script>
+        <script type="text/javascript" src="js/directive/uiPreviewDirective.js"></script>
+        <script type="text/javascript" src="js/filter/episodioFilter.js"></script>
+        <script type="text/javascript" src="js/filter/anoFilter.js"></script>
     </head>
     <body ng-controller="RenderingCtrl">
-        <div class="container">
+        <div class="page" ng-controller="SearchCtrl">
             <div>
-                <div class="search card" ng-controller="SearchCtrl">
-                    <div class="card-image">
-                        <img class="imgpreview" ng-src="{{imagePreview}}">
-                    </div>
+                <div class="search card">
+                    <ui-preview image="imagePreview" video="videoPreview"></ui-preview>
                     <div class="card-content">
                         <form>
                             <div class="searchfile file-field input-field">
@@ -36,44 +39,57 @@
                         <button ng-click="SearchImgSelected(ImageSelected)"  class="btn waves-effect waves-light #e57373 red lighten-2" type="submit">
                             Enviar<i class="material-icons right">system_update_alt</i>
                         </button>
-                        <div class="divider"></div>
-                        <div>
-                            <span class="card-title">Resultado:</span>
+                        <div ng-if="animeResult!=null">
+                            <div class="divider"></div>
+                            <span class="card-title">
+                                {{animeResult.title}}<br>
+                                {{animeResult.title_japanese}}
+                            </span>
                             <div class="resume">
-                                <div class="resume-table">
+                                <div>
                                     <table>
                                         <tr>
-                                            <td class="property">Anime:</td>
-                                            <td>exemplo</td>
+                                            <td>Episodios:</td>
+                                            <td>{{animeResult.episodes | episodioFilter}}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Ano de lançamento:</td>
+                                            <td>{{animeResult.aired.prop.from.year | anoFilter}}</td>
                                         </tr>
                                         <tr>
                                             <td>Gênero:</td>
-                                            <td>exemplo</td>
+                                            <td>
+                                                <span ng-repeat="anime in animeResult.genres">
+                                                    {{anime.name}}<br>
+                                                </span>
+                                            </td>
                                         </tr>
                                         <tr>
                                             <td>Estúdio:</td>
-                                            <td>exemplo</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Episódio:</td>
-                                            <td>exemplo</td>
+                                            <td>
+                                                <span ng-repeat="anime in animeResult.studios">
+                                                    {{anime.name}}<br>
+                                                </span>
+                                            </td>
                                         </tr>
                                     </table>
                                 </div>
                                 <div>
-                                    <img class="imgcapa z-depth-2" src="exemplo.jpg">
+                                    <img class="imgcapa z-depth-2" src="{{animeResult.image_url}}">
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div>
+            <div ng-if="animeResult!=null">
                 <div class="result card">
                     <div class="card-content">
-                        <span class="card-title">0000 resultados encontrados</span>
-                        <div ng-repeat="thumbnail in thumbnailResult" class="waves-effect waves-red input-field">
-                            <img class="thumbpreview" src="{{thumbnail}}">
+                        <span class="card-title">{{thumbnailResult.length}} resultados encontrados</span>
+                        <div>
+                            <div ng-repeat="(key, value) in allAnimeResult" class="waves-effect waves-red input-field" ng-click="SelectedResult(value)">
+                                <img class="thumbpreview" src="{{thumbnailResult[key]}}">
+                            </div>
                         </div>
                     </div>
                 </div>

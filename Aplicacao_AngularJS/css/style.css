@@ -1,23 +1,21 @@
-.container, .resume{
+.page, .resume{
     margin-top: 3vh;
     text-align:center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     display: flex;
-}
-.resume-table{
-    width: 30vh;
 }
 .imgpreview{
     border-radius: 8px;
-    width: 80vh;
-    height: 40vh;
+    max-width: 600px;
+    height: 350px;
 }
 .thumbpreview{
-    width: 30vh;
-    height: 15vh;
+    width: 200px;
+    height: 100px;
+    margin: 5px;
 }
 .imgcapa{
-    width: 25vh;
+    max-width: 25vh;
     height: 30vh;
 }
 .searchfile{
@@ -26,14 +24,12 @@
     justify-content: center;
 }
 .searchfile .file-path-wrapper{
-    width: 40vh;
+    max-width: 40vh;
 }
-.card{
-    margin-top: 5vh;
-    width: 70vh;
-}
-.result.card{
-    width: 40vh;
+.result.card .card-content div{
+    max-width: 630px;
+    display: flex;
+    flex-wrap:wrap;
     height: auto;
 }
 .search.card{
@@ -45,8 +41,9 @@
 }
 table, td, th{
     font-size: 14px;
-    border: 1px solid black;
+    border: 1px solid gray;
+    padding: 5px;
 }
 td.property{
-    width: 8vh;
+    max-width: 8vh;
 }

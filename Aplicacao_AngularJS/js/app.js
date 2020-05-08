@@ -1,1 +1,1 @@
-angular.module("AppAnime",["Rendering", "SearchPage"]);
+angular.module("AppAnime",[]);
