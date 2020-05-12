@@ -1,0 +1,114 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+$light:                           #fff !default;
+$stable:                          #f8f8f8 !default;
+$positive:                        #387ef5 !default;
+$calm:                            #11c1f3 !default;
+$balanced:                        #33cd5f !default;
+$energized:                       #ffc900 !default;
+$assertive:                       #ef473a !default;
+$royal:                           #886aea !default;
+$dark:                            #444 !default;
+*/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+
+ion-content{
+    background: rgb(252, 109, 109);
+    &.pokemons{
+        .list .item{
+            background: rgb(26, 155, 54);
+            border-color: rgb(0, 95, 8);
+            input{
+                color:rgb(145, 255, 0);
+                font-size: 2.5vh;
+            }
+            i{
+                color:rgb(145, 255, 0);
+                font-size: 2.5vh;
+            }
+            ::placeholder  {
+                color: rgb(145, 255, 0);
+                opacity: 0.4; /* Firefox */
+            }
+        }
+        .pokemon-list {
+            background: rgb(71, 71, 71) !important;
+            border:0px;
+            margin: 10px;
+            .pokemon-list-img{
+                width: 70px;
+            }
+        }
+    }
+    &.pokemon-details{
+        .circle{
+            height: 15px;
+            width: 15px;
+            background-color: red;
+            border-radius: 50%;
+            display: inline-block;
+            &.small{
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+                margin: 3px;
+            }
+        }
+        .button-icon{
+            &.ion-ios-circle-filled{
+                color:rgb(0, 183, 255);
+            }
+            &.ion-ios-circle-filled:hover{
+                color:rgb(0, 183, 255);
+            }
+        }
+        .icon.ion-drag{
+            color: gray;
+            font-size: 25px;
+        }
+        .card{
+            .card-head{
+                display:flex;
+                justify-content:center;
+                margin: 5px;
+            }
+            .card-content {
+                display: flex;
+                justify-content:center;
+                align-items:center;
+                flex-direction:column;
+                background: rgb(71, 71, 71);
+                margin-left: 30px;
+                margin-right: 30px;
+                height: 225px;
+                h3 {
+                    color: gray;
+                }
+                .card-img{
+                    filter: grayscale(100%);
+                    width: 150px;
+                }
+            }
+            .card-footer{
+                display:flex;
+                justify-content:space-between;
+                align-items:center;
+                margin: 10px;
+            }
+        }
+        .info {
+            background: rgb(71, 71, 71);
+            margin: 30px;
+            padding: 15px;
+        }
+    }
+}
