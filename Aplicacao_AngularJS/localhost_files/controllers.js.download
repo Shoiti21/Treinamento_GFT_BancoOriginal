@@ -1,0 +1,44 @@
+angular.module('starter.controllers', [])
+
+  .controller('PokemonCtrl', ['$scope', 'PokeAPI', '$state', '$ionicLoading', function ($scope, PokeAPI, $state, $ionicLoading) {
+    $ionicLoading.show();
+    
+    PokeAPI.get().then(function (response) {
+      if (response && response.data && response.data.results) {
+        $scope.listPokemon = response.data.results;
+      }
+      $ionicLoading.hide();
+    });
+    $scope.showDetails = function (param) {
+      $state.go("tab.pokemon-detail", { pokeId: param });
+    };
+    $scope.getPokemonIdFromUrl = function (url) {
+      var id = 0;
+      if (url) {
+        var urlSplit = url.split("/pokemon");
+        if (urlSplit[1]) {
+          id = urlSplit[1].replace(/\//g, "");
+        }
+      }
+      return id;
+    };
+
+  }])
+
+
+  .controller('PokemonDetailCtrl',['$scope', '$stateParams', 'PokeAPI', '$ionicPopup', '$ionicLoading', function ($scope, $stateParams, PokeAPI, $ionicPopup, $ionicLoading) {
+    $ionicLoading.show();
+    PokeAPI.getPokemonFromId($stateParams.pokeId).then(function (response) {
+      if (response && response.data) {
+        $scope.PokemonInfo = response.data;
+        console.log(response.data);
+        $ionicLoading.hide();
+      }
+    });
+  }])
+
+  .controller('ConfigCtrl', function ($scope) {
+    $scope.settings = {
+      enableFriends: true
+    };
+  });

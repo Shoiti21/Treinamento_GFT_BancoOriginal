@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!-- saved from url=(0037)http://localhost:8100/#/tab/pokemon/1 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="http://localhost:8100/manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="./localhost_files/ionic.css" rel="stylesheet">
+    <link href="./localhost_files/style.css" rel="stylesheet">
+    <link href="./localhost_files/ionic.app.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="./localhost_files/ionic.bundle.js.download"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="./localhost_files/cordova.js.download"></script>
+
+    <!-- your app's js -->
+    <script src="./localhost_files/app.js.download"></script>
+    <script src="./localhost_files/controllers.js.download"></script>
+    <script src="./localhost_files/services.js.download"></script>
+  </head>
+  <body ng-app="Pokedex" class="grade-a platform-browser platform-ios platform-ios13 platform-ios13_2 platform-ready">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <ion-nav-bar class="bar-stable nav-bar-container" nav-bar-transition="ios" nav-bar-direction="none" nav-swipe="">
+      <ion-nav-back-button class="hide"></ion-nav-back-button>
+    <div class="nav-bar-block" nav-bar="cached"><ion-header-bar class="bar-stable bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item"><i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide"></span></span></button><div class="title title-center header-item"></div></ion-header-bar></div><div class="nav-bar-block" nav-bar="active"><ion-header-bar class="bar-stable bar bar-header" align-title="center"><button ng-click="$ionicGoBack()" class="button back-button hide buttons button-clear header-item"><i class="icon ion-ios-arrow-back"></i> 
+      <span class="back-text"><span class="default-title">Back</span><span class="previous-title hide"></span></span></button><div class="title title-center header-item" style="left: 65px; right: 65px;"><span class="nav-bar-title ng-binding">bulbasaur</span></div><div class="buttons buttons-right"><span class="secondary-buttons">
+    <button class="button button-icon icon ion-ios-star-outline" ng-click="doSomething()"></button>
+  </span></div></ion-header-bar></div></ion-nav-bar>
+    <ion-nav-view class="view-container" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-tabs class="tabs-icon-top tabs-color-active-positive pane tabs-bottom tabs-standard" abstract="true" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);"><div class="tab-nav tabs">
+
+  <!-- Pokémon Tab -->
+  <ion-tab icon-off="ion-ios-circle-outline" icon-on="ion-ios-circle-filled" href="#/tab/pokemon"></ion-tab>
+
+  <!-- Account Tab -->
+  <ion-tab icon-off="ion-ios-gear-outline" icon-on="ion-ios-gear" href="#/tab/config"></ion-tab>
+
+
+<a ng-class="{&#39;has-badge&#39;:badge, &#39;tab-hidden&#39;:isHidden(), &#39;tab-item-active&#39;: isTabActive()}" ng-disabled="disabled()" class="tab-item tab-item-active" icon-on="ion-ios-circle-filled" icon-off="ion-ios-circle-outline" style=""><!-- ngIf: badge --><!-- ngIf: getIcon() --><i class="icon ion-ios-circle-filled" ng-if="getIcon()" style=""></i><!-- end ngIf: getIcon() --><span class="tab-title ng-binding" ng-bind-html="title">Pokédex</span></a><a ng-class="{&#39;has-badge&#39;:badge, &#39;tab-hidden&#39;:isHidden(), &#39;tab-item-active&#39;: isTabActive()}" ng-disabled="disabled()" class="tab-item" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline"><!-- ngIf: badge --><!-- ngIf: getIcon() --><i class="icon ion-ios-gear-outline" ng-if="getIcon()" style=""></i><!-- end ngIf: getIcon() --><span class="tab-title ng-binding" ng-bind-html="title">Filtro</span></a></div><ion-nav-view name="tab-pokemon" class="view-container tab-content" nav-view="active" nav-view-transition="ios" nav-view-direction="none" nav-swipe=""><ion-view class="pane" state="tab.pokemon-detail" nav-view="active" style="opacity: 1; transform: translate3d(0%, 0px, 0px);">
+  <ion-nav-title class="hide"></ion-nav-title>
+  <ion-nav-buttons side="secondary" class="hide"></ion-nav-buttons>
+  <ion-content class="pokemon-details padding scroll-content ionic-scroll  has-header has-tabs"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+    <div class="card">
+      <div class="card-head">
+        <i class="circle small"></i>
+        <i class="circle small"></i>
+      </div>
+      <div class="card-content">
+        <h3 class="ng-binding">bulbasaur</h3>
+        <img class="card-img" src="./localhost_files/1.png">
+      </div>
+      <div class="card-footer">
+        <i class="circle"></i>
+        <i class="icon ion-drag"></i>
+      </div>
+    </div>
+    <div class="info">
+      <table>
+        <tbody><tr>
+          <td>
+            <table class="info-table">
+              <tbody><tr>
+                <td>Altura:</td>
+                <td class="ng-binding">7</td>
+              </tr>
+              <tr>
+                <td>Tipo:</td>
+                <td>
+                  <!-- ngRepeat: types in PokemonInfo.types --><i ng-repeat="types in PokemonInfo.types" class="ng-binding" style="">poison<br></i><!-- end ngRepeat: types in PokemonInfo.types --><i ng-repeat="types in PokemonInfo.types" class="ng-binding">grass<br></i><!-- end ngRepeat: types in PokemonInfo.types -->
+                </td>
+              </tr>
+            </tbody></table>
+          </td>
+          <td>
+            <table class="info-table">
+              <tbody><tr>
+                <td>Peso:</td>
+                <td class="ng-binding">69</td>
+              </tr>
+              <tr>
+                <td>Fraquezas:</td>
+                <td>sfdsdfsdfsd</td>
+              </tr>
+            </tbody></table>
+          </td>
+        </tr>
+      </tbody></table>
+    </div>
+  </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 0px;"></div></div></ion-content>
+</ion-view></ion-nav-view></ion-tabs></ion-nav-view>
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    
+  
+    <!-- Ionic Dev Server: Injected Dev Server Script -->
+    <script src="./localhost_files/dev-server.js.download" async="" defer=""></script>
+
+    <!-- Ionic Dev Server: Injected LiveReload Script -->
+    <script>
+      window.LiveReloadOptions = {
+        host: window.location.hostname,
+        port: 35729,
+        snipver: true,
+      };
+    </script>
+    <script src="./localhost_files/livereload.js.download" async="" defer=""></script>
+
+
+<div class="backdrop"></div><div class="loading-container"><div class="loading"></div></div></body></html>

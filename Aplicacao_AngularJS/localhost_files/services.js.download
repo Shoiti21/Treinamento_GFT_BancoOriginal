@@ -1,0 +1,23 @@
+angular.module('starter.services', [])
+
+.service('PokeAPI', ['$http',function($http) {
+  this.get=function(){
+    return $http.get('https://pokeapi.co/api/v2/pokemon/');
+  }
+  this.getPokemonFromId=function(param){
+    return $http.get('https://pokeapi.co/api/v2/pokemon/' + param);
+  }
+  this.getTypeWeakness= function(){
+    var TypeWeakness=[];
+    $http.get('https://pokeapi.co/api/v2/type/4/').then(function(data){
+      if(data.data.damage_relations && data.data.double_damage_from){
+        TypeWeakness.push(data.data.double_damage_from);
+        if(data.data.no_damage_to){
+          TypeWeakness.push(data.data.no_damage_to);
+        }
+      }
+    });
+    console.log(TypeWeakness);
+    return TypeWeakness;
+  }
+}]);
