@@ -1,5 +1,86 @@
+.ion-ios-star{
+    color:rgb(204, 184, 0) !important;
+}
 ion-content{
     background: rgb(252, 109, 109);
+    .bar-status{
+        background:rgb(0, 102, 255);
+        color: white;
+        text-align: center;
+        margin: 0.4vh;
+        height: 2.5vh;
+    }
+    .typeBox{
+        text-align: center;
+        text-transform: uppercase;
+        color: rgba(0, 0, 0, 0.493);
+        font-weight: bold;
+        font-size: 14px;
+        border-radius: 3px;
+        width: 9vh;
+        margin: 0.5vh;
+        border: 0.1vh solid; 
+        &.normal{
+            background:rgb(122, 129, 105);
+        }
+        &.fighting{
+            background:rgb(190, 2, 2);
+        }
+        &.flying{
+            background:rgb(175, 134, 250);
+        }
+        &.poison{
+            background:rgb(157, 1, 219);
+        }
+        &.ground{
+            background:yellow;
+        }
+        &.rock{
+            background:rgb(170, 150, 38);
+        }
+        &.bug{
+            background:rgb(173, 212, 0);
+        }
+        &.ghost{
+            background:rgb(72, 3, 201);
+        }
+        &.steel{
+            background:rgb(196, 196, 196);
+        }
+        &.fire{
+            background:rgb(255, 123, 0);
+        }
+        &.water{
+            background:rgb(0, 102, 255);
+        }
+        &.grass{
+            background:rgb(33, 197, 0);
+        }
+        &.electric{
+            background:rgb(255, 217, 0);
+        }
+        &.psychic{
+            background:rgb(255, 0, 106);
+        }
+        &.ice{
+            background:rgb(124, 255, 248);
+        }
+        &.dragon{
+            background:rgb(76, 0, 255);
+        }
+        &.dark{
+            background:rgb(97, 83, 68);
+        }
+        &.fairy{
+            background:rgb(234, 0, 255);
+        }
+        &.unknown{
+            background:rgb(0, 255, 170);
+        }
+        &.shadow{
+            background:rgb(132, 0, 255);
+        }
+    }
     &.pokemons{
         .list .item{
             background: rgb(26, 155, 54);
