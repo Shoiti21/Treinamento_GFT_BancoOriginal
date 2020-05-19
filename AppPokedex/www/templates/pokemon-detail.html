@@ -1,0 +1,45 @@
+<ion-view>
+  <ion-nav-title>{{PokemonInfo.name}}</ion-nav-title>
+  <ion-nav-buttons side="secondary">
+    <button ng-class="{'ion-ios-star-outline': !favorite(), 'ion-ios-star': favorite()}" class="button button-icon icon"
+      ng-click="addFavorite()"></button>
+  </ion-nav-buttons>
+  <ion-content class="pokemon-details padding">
+    <div class="card">
+      <div class="card-head">
+        <i class="circle small"></i>
+        <i class="circle small"></i>
+      </div>
+      <div class="card-content">
+        <h3>{{PokemonInfo.name}}</h3>
+        <img class="card-img" src="{{'https://pokeres.bastionbot.org/images/pokemon/'+PokemonInfo.id+'.png'}}">
+      </div>
+      <div class="card-footer">
+        <i class="circle"></i>
+        <i class="icon ion-drag"></i>
+      </div>
+    </div>
+    <div class="info">
+      <table>
+        <tr>
+          <td>Altura:</td>
+          <td>{{(PokemonInfo.height | num) + " m"}}</td>
+        </tr>
+        <tr>
+          <td>Peso:</td>
+          <td>{{(PokemonInfo.weight | num) + " kg"}}</td>
+        </tr>
+        <tr>
+          <td>Tipo:</td>
+          <td>
+            <div ng-repeat="types in PokemonInfo.types" class="typeBox {{types.type.name}}" ui-type>
+              <span>{{types.type.name}}</span>
+            </div>
+
+          </td>
+        </tr>
+      </table>
+      <button class="button button-light" ng-click="modal.show()">Status</button>
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,29 @@
+<ion-modal-view>
+  <ion-header-bar>
+    <h1 class="title">Status</h1>
+      <button class="button button-clear button-dark" ng-click="modal.hide()">Fechar</button>
+ 
+  </ion-header-bar>
+  <ion-content class="modal-status">
+    <table class="status-info">
+      <tr ng-repeat="stat in PokemonInfo.stats">
+        <td class="table-info-status">{{stat.stat.name}}</td>
+        <td class="table-bar-status">
+          <div class="bar-status" style="{{'width: '+stat.base_stat+'px;'}}">{{stat.base_stat}}</div>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <th><h4>Fraquezas</h4></th>
+      </tr>
+      <tr ng-repeat="type in PokemonTypesWeaknesses">
+        <td>
+          <div class="typeBox {{type.name}}">
+            <span>{{type.name}}</span>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </ion-content>
+</ion-modal-view>

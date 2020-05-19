@@ -1,0 +1,19 @@
+<ion-view view-title="Pokémon">
+  <ion-content class="pokemons">
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Pokémon">
+      </label>
+    </div>
+    <div class="pokemon-list">
+      <a class="pokemon-list-content" ng-repeat="(index, value) in listPokemon" ng-click="showDetails(getPokemonIdFromUrl(value.url))">
+        <img class="pokemon-list-img" src="{{'https://pokeres.bastionbot.org/images/pokemon/'+getPokemonIdFromUrl(value.url)+'.png'}}">
+        <span ng-if="!favorite()">{{index+') '+value.name}}</span>
+        <span ng-if="favorite()">{{index+') '+value.name}}
+          <i class="icon ion-ios-star" ></i>
+        </span>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
