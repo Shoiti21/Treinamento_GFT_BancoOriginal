@@ -11,8 +11,6 @@ angular.module('AppMaquina').controller("PedirMaquinaCtrl", ['$scope', '$state',
             return value.id == configValue.maquinaId;
         })
     }
-    console.log(configValue.maquinaId);
-    console.log($scope.confirmedMaquina);
     $scope.check = function (param) {   //abrir o footer de confirmação
         $scope.selectedMaquininha = true;
         $scope.confirmedMaquinaId = param;
