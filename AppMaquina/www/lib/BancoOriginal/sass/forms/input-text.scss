@@ -1,0 +1,114 @@
+@mixin float-label-container {
+	display: block;
+	position: relative;
+}
+
+@mixin float-label {
+	label, > span {
+		position: absolute;
+		left: 0;
+		top: 0;
+		cursor: text;
+		opacity: 1;
+		transition: all .2s;
+
+		font-family: 'proximanova-regular';
+		font-size: 12px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: 1;
+		letter-spacing: normal;
+		color: #afafaf;
+
+		@content;
+	}
+}
+
+@mixin float-label-input {
+	&::placeholder {
+		opacity: 0;
+		transition: all .2s;
+	}
+	&:placeholder-shown:not(:focus)::placeholder {
+		opacity: 0;
+	}
+}
+
+@mixin float-label-scaled {
+	&:placeholder-shown:not(:focus) + * {
+		font-family: 'proximanova-light';
+		font-size: 16px;
+		font-weight: 300;
+		margin-top: 12px;
+		@content;
+	}
+}
+
+// Usage:
+// <div class="float-label-input">
+//   <input id="input-id" type="text" placeholder="Input Name" ng-class="{ 'field-error' : error }">
+//   <label for="input-id">Input Name</label>
+//   <div class="error-message">Error message</div>
+// </div>
+.bo-float-label-input {
+	@include float-label-container;
+	@include float-label;
+	
+	input {
+		@include float-label-input;
+		padding-top: 12px;
+		margin-bottom: 2px;
+		border-radius: 0;
+		height: 37px;
+
+		font-family: 'proximanova-light';
+		font-size: 16px;
+		font-weight: 300;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: normal;
+		letter-spacing: normal;
+
+		&:not(.field-error) {
+			border-bottom: 1px solid #afafaf;
+			color: #4a4b4a;
+		}
+		&.field-error {
+			border-bottom: 2px solid #dc213a;
+        	color: #dc213a;
+		}
+		&.field-success {
+			border-bottom: 2px solid $bo-green;
+		}
+	
+		@include float-label-scaled {
+			top: .25em;
+		}
+	
+		&:focus {
+			outline: none;
+		}
+	}
+
+	.icon {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-top: 8px;
+		margin-right: 8px;
+	}
+
+	.error-message {
+		font-family: 'proximanova-regular';
+		min-height: 16px;
+		font-size: 12px;
+		font-weight: normal;
+		font-style: normal;
+		font-stretch: normal;
+		line-height: 1.33;
+		letter-spacing: normal;
+		color: #dc213a;
+		margin-top: 4px;
+	}
+}

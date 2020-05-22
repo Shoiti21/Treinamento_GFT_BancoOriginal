@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="56" viewBox="0 0 64 56">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M0 0h64v56H0z"/>
+        <rect width="1" height="1" x="32" y="28" fill="#ECF3F0" rx=".28"/>
+        <text fill="#4A4B4A" font-family="ProximaNova-Regular, Proxima Nova" font-size="12" letter-spacing=".2" transform="translate(0 36)">
+            <tspan x="16.35" y="11">Pagar</tspan>
+        </text>
+        <path fill="#4A4B4A" d="M39 11c1.103 0 2 .897 2 2v2.5a.5.5 0 0 1-1 0V13a1 1 0 0 0-1-1H25a1 1 0 0 0-1 1v2.5a.5.5 0 0 1-1 0V13c0-1.103.897-2 2-2h14zm1.5 13a.5.5 0 0 1 .5.5V27c0 1.103-.897 2-2 2H25c-1.103 0-2-.897-2-2v-2.5a.5.5 0 0 1 1 0V27a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 .5-.5zM28 23.5a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0v7zm2 0a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0v7zm2 0a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0v7zm3 0a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0v7zm2 0a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0v7z"/>
+    </g>
+</svg>

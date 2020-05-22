@@ -1,0 +1,25 @@
+<ion-view>
+    <ion-nav-title>
+        <span class="bo-font bo-medium bo-size-18">PEDIR MAQUININHA</span>
+    </ion-nav-title>
+    <ion-content scroll="true" class="page-home">
+        <div class="base">
+            <div>
+                <img class="base-img" src={{confirmedMaquina[0].img}}>
+            </div>
+            <div class="base-info">
+                <p class="bo-font bo-regular bo-size-14">Você já contratou a</p>
+                <p class="bo-font bo-medium bo-size-16">{{confirmedMaquina[0].name}}</p>
+            </div>
+        </div>
+        <div class="contact">
+            <p class="bo-font bo-semibold bo-size-12">Para mais informações sobre a maquininha, entre em contato com a Cielo nos números: 
+                <span class="contact-number">4002 5472</span> ou <span class="contact-number">0800 570 8472</span> (exceto capitais e celular), ou acesse www.cielo.com.br</p>
+        </div>
+    </ion-content>
+    <ion-footer-bar class="home-footer" align-title="center">
+        <div class="button-confirmed">
+            <button class="bo-primary-button" ng-click="home()">Pedir nova maquininha</button>
+        </div>
+    </ion-footer-bar>
+</ion-view>

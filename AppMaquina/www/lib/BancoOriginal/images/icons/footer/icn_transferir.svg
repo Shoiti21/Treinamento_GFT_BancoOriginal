@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="56" viewBox="0 0 64 56">
+    <g fill="none" fill-rule="evenodd">
+        <path fill="#FFF" d="M0 0h64v56H0z"/>
+        <rect width="1" height="1" x="32" y="28" fill="#ECF3F0" rx=".28"/>
+        <text fill="#4A4B4A" font-family="ProximaNova-Regular, Proxima Nova" font-size="12" letter-spacing=".2" transform="translate(0 36)">
+            <tspan x="6.466" y="11">Transferir</tspan>
+        </text>
+        <path fill="#4A4B4A" d="M27.853 19.146a.5.5 0 0 1-.707.707l-4-4a.5.5 0 0 1 0-.707l4-4a.5.5 0 0 1 .707.707L24.707 15H35.5a.499.499 0 1 1 0 1H24.707l3.146 3.146zm13 4a.5.5 0 0 1 0 .707l-4 4a.5.5 0 1 1-.707-.707L39.292 24H28.5a.5.5 0 0 1 0-1h10.793l-3.146-3.147a.5.5 0 0 1 .707-.707l4 4z"/>
+    </g>
+</svg>

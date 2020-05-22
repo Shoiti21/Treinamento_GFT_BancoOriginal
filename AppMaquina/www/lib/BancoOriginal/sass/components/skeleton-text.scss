@@ -1,0 +1,26 @@
+// forked from https://codepen.io/viktorstrate/pen/yoBRLy
+// https://codepen.io/jimmybnguyen/pen/proKYb
+
+$bo-skeleton-base-color: #f6f6f6;
+$bo-skeleton-shine-color: #ededed;
+$bo-skeleton-animation-duration: 2.0s;
+
+// this unfortunately uses set px widths for the background-gradient, I never got around to changing it to work with all widths :(
+@mixin bo-skeleton-background-gradient {
+    background-image: linear-gradient(90deg, $bo-skeleton-base-color 0px, $bo-skeleton-shine-color 40px, $bo-skeleton-base-color 80px);
+    background-size: 600px;
+}
+ 
+@keyframes bo-skeleton-shine-lines {
+  0% { background-position: -100px }
+  
+  40%, 100% { background-position: 140px }
+}
+
+.bo-skeleton-text {
+    float: left;
+    height: 12px;
+
+    @include bo-skeleton-background-gradient;
+    animation: bo-skeleton-shine-lines $bo-skeleton-animation-duration infinite ease-out;
+}

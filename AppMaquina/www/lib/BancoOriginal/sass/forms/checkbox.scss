@@ -1,0 +1,44 @@
+.bo-checkbox {
+    display: none;
+}
+.bo-checkbox + label {
+    position: relative;
+    font-family: 'proximanova-light';
+    font-weight: 300;
+    font-size: 16px;
+    position: relative;
+    cursor: pointer;
+    height: 24px;
+    line-height: 24px;
+    display: inline-block;
+
+    &.label-visible {
+        padding-left: 24px;
+    }
+}
+.bo-checkbox:checked + label:before,
+.bo-checkbox:not(:checked) + label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    display: inline-block;
+}
+.bo-checkbox:checked + label:before {
+    background: url(../images/inp-check-on.svg);
+}
+.bo-checkbox:not(:checked) + label:before {
+    background: url(../images/inp-check-off.svg);
+}
+.bo-checkbox + label + p {
+    &.label-visible {
+        margin-left: 22px;
+        margin-top: -31px;
+
+        a.underline {
+            text-decoration: underline !important;
+        }
+    }
+}

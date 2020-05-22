@@ -1,0 +1,82 @@
+<ion-view>
+    <ion-nav-title>
+        <span class="bo-font bo-medium bo-size-18">PEDIR MAQUININHA</span>
+    </ion-nav-title>
+    <ion-content scroll="true" class="page-home">
+        <div>
+            <div class="sub-title">
+                <p class="bo-font bo-semibold bo-size-16">Escolha a sua máquina Original grátis</p>
+            </div>
+            <ul class="list">
+                <!-- ng-repeat de todas as maquinas -->
+                <li class="item" ng-repeat="(key, value) in maquininhas">
+                    <div class="item-maquininha">
+                        <div class="item-selected">
+                            <input type="radio" id="{{key}}" ng-model="itemMaquinaId" ng-checked="confirmedMaquinaId == value.id" name="rad" class="bo-radio" ng-value="{{value.id}}" ng-click="check(itemMaquinaId)">
+                            <label for="{{key}}" class="label-visible"></label>
+                        </div>
+                        <div>
+                            <img class="item-img" src={{value.img}}>
+                        </div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>
+                                        <span class="bo-font bo-semibold bo-size-16">{{value.name}}</span>
+                                    </th>
+                                </tr>
+                                <tr ng-repeat="component in value.components">
+                                    <td class="item-status-info">
+                                        <img src="lib/BancoOriginal/images/icons/icn_selected.svg">
+                                        <div>
+                                            <span class="bo-font bo-regular bo-size-12">{{component}}</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <!-- ng-repeat de todas as condições das maquinas -->
+            <div class="info-conditions" ng-repeat="condition in conditions">
+                <p class="bo-font bo-semibold bo-size-14">Condições {{condition.name}}</p>
+                <div class="info-conditions-left">
+                    <p class="bo-font bo-regular bo-size-14">Débito</p>
+                    <p class="bo-font bo-light bo-size-12">Receba em 1 dia</p>
+                </div>
+                <div class="info-conditions-right">
+                    <p class="bo-font bo-regular bo-size-14">{{condition.debit.perDay}}%</p>
+                    <p class="bo-font bo-light bo-size-12">Após 1 ano {{condition.debit.perYear}}%</p>
+                </div>
+                <div class="Rectangle-5"></div>
+                <div class="info-conditions-left">
+                    <p class="bo-font bo-regular bo-size-14">Crédito à vista</p>
+                    <p class="bo-font bo-light bo-size-12">Receba em até 2 dias</p>
+                </div>
+                <div class="info-conditions-right">
+                    <p class="bo-font bo-regular bo-size-14">{{condition.credit.cashPerTwoDays}}%</p>
+                </div>
+                <div class="Rectangle-5"></div>
+                <div class="info-conditions-left">
+                    <p class="bo-font bo-regular bo-size-14">Crédito parcelado</p>
+                </div>
+                <div class="info-conditions-right">
+                    <p class="bo-font bo-regular bo-size-14">{{condition.credit.parceled.default}}%</p>
+                    <p class="bo-font bo-light bo-size-12">+ {{condition.credit.parceled.perParcel}}% por parcela</p>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+
+    <ion-footer-bar class="home-footer" align-title="center" ng-if="selectedMaquininha">
+        <div class="button-confirmed">
+            <button class="bo-primary-button" ng-click="confirmed(confirmedMaquinaId)">Quero esta máquina</button>
+        </div>
+        <div class="button-canceled">
+            <a class="bo-font bo-semibold bo-size-14" ng-click="uncheck()">
+                <p>Cancelar</p>
+            </a>
+        </div>
+    </ion-footer-bar>
+</ion-view>
